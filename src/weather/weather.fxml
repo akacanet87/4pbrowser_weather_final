@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+
+<fx:root fx:id="root" id="rootPane" xmlns:fx="http://javafx.com/fxml/" type="HBox" alignment="CENTER" spacing="10">
+	<padding><Insets topRightBottomLeft="10.0"/></padding>
+   <children>
+      <VBox fx:id="vboxLeft" prefHeight="500.0" prefWidth="400.0" alignment="CENTER">
+         <children>
+            <Pane fx:id="pnComboBox" prefHeight="50.0" prefWidth="400.0">
+               <children>
+                  <ComboBox fx:id="comboSido" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="80.0" promptText="시/도" />
+                  <ComboBox fx:id="comboGungu" layoutX="100.0" layoutY="10.0" prefHeight="20.0" prefWidth="120.0" promptText="군/구"  />
+                  <ComboBox fx:id="comboDong" layoutX="230.0" layoutY="10.0" prefHeight="20.0" prefWidth="100.0" promptText="동/읍/리"  />
+                  <Button fx:id="btnSearch" layoutX="340.0" layoutY="10.0" prefHeight="20.0" prefWidth="40.0" text="설정"/>
+               </children>
+            </Pane>
+            <HBox fx:id="hboxPresent" prefHeight="250.0" prefWidth="400.0">
+               <children>
+                  <VBox fx:id="vboxPresentLeft" prefHeight="250.0" prefWidth="200.0">
+                     <children>
+                        <Label id="label" fx:id="lbPresentWeatherIcon" prefHeight="200.0" prefWidth="200.0" text="" />
+                        <Label id="label" fx:id="lbPresentTemp" prefHeight="50.0" prefWidth="200.0" text="" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vboxPresentRight" prefHeight="250.0" prefWidth="200.0" alignment="CENTER">
+                  	<children>
+                     	<Label id="label" fx:id="lbPresentTime" prefHeight="75.0" prefWidth="200.0" text=""/>
+		                <HBox fx:id="hboxPresentStatus" prefHeight="175.0" prefWidth="200.0" alignment="CENTER">
+		                     <children>
+		                        <VBox fx:id="vboxPresentTitle" prefHeight="250.0" prefWidth="50.0">
+		                           <children>
+		                          	  <Label id="label" fx:id="lbPresentTitleWeatherDetail" prefHeight="35.0" prefWidth="50.0" text="날씨명" />
+		                              <Label id="label" fx:id="lbPresentTitleAmountRain" prefHeight="35.0" prefWidth="50.0" text="강수량" />
+		                              <Label id="label" fx:id="lbPresentTitleHumidity" prefHeight="35.0" prefWidth="50.0" text="습도" />
+		                              <Label id="label" fx:id="lbPresentTitleWind" prefHeight="35.0" prefWidth="50.0" text="풍속" />
+		                              <Label id="label" fx:id="lbPresentTitleClouds" prefHeight="35.0" prefWidth="50.0" text="구름량" />
+		                           </children>
+		                        </VBox>
+		                        <VBox fx:id="vboxPresentStatus" prefHeight="250.0" prefWidth="100.0" >
+		                           <children>
+		                              <Label id="label" fx:id="lbPresentStatusWeatherDetail" prefHeight="35.0" prefWidth="100.0" text="" />
+		                              <Label id="label" fx:id="lbPresentStatusAmountRain" prefHeight="35.0" prefWidth="100.0" text="" />
+		                              <Label id="label" fx:id="lbPresentStatusHumidity" prefHeight="35.0" prefWidth="100.0" text="" />
+		                              <Label id="label" fx:id="lbPresentStatusWind" prefHeight="35.0" prefWidth="100.0" text="" />
+		                              <Label id="label" fx:id="lbPresentStatusClouds" prefHeight="35.0" prefWidth="100.0" text="" />
+		                           </children>
+		                        </VBox>
+		                        <VBox fx:id="vboxPresentButton" prefHeight="250.0" prefWidth="50.0">
+		                           <children>
+		                          	  <Label prefHeight="35.0" prefWidth="50.0" text="" />
+		                              <Label prefHeight="35.0" prefWidth="50.0" text="" />
+		                              <Label prefHeight="35.0" prefWidth="50.0" text="" />
+		                              <Label prefHeight="35.0" prefWidth="50.0" text="" />
+		                              <Button fx:id="btnRefresh" prefHeight="30.0" prefWidth="30.0" text="" />
+		                           </children>
+		                        </VBox>
+		                     </children>
+		                  </HBox>
+                  	</children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="hboxDaily" prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="50.0">
+                     <children>
+                        <Label id="label" fx:id="lbDailyTitleDate" prefHeight="40.0" prefWidth="50.0" text="날짜" />
+                        <Label id="label" fx:id="lbDailyTitleWeather" prefHeight="70.0" prefWidth="50.0" text="날씨" />
+                        <Label id="label" fx:id="lbDailyTitleDetail" prefHeight="40.0" prefWidth="50.0" text="날씨명" />
+                        <Label id="label" fx:id="lbDailyTitleLowHigh" prefHeight="40.0" prefWidth="50.0" text="저/고" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="vboxRight" prefHeight="500.0" prefWidth="485.0" alignment="CENTER" spacing="20.0">
+         <children>
+            <HBox fx:id="hboxHourlyTop" prefHeight="250.0" prefWidth="485.0" spacing="2">
+               <children>
+                  <VBox prefHeight="250.0" prefWidth="50.0">
+                     <children>
+                        <Label id="label" fx:id="lbHourlyTopTitleTime" prefHeight="30.0" prefWidth="60.0" text="시간" />
+                        <Label id="label" fx:id="lbHourlyTopTitleWeather" prefHeight="80.0" prefWidth="60.0" text="날씨" />
+                        <Label id="label" fx:id="lbHourlyTopTitleDetail" prefHeight="25.0" prefWidth="60.0" text="날씨명" />
+                        <Label id="label" fx:id="lbHourlyTopTitleTemp" prefHeight="25.0" prefWidth="60.0" text="온도" />
+                        <Label id="label" fx:id="lbHourlyTopTitleRainAmount" prefHeight="20.0" prefWidth="60.0" text="강수량" />
+                        <Label id="label" fx:id="lbHourlyTopTitleHumidity" prefHeight="20.0" prefWidth="60.0" text="습도" />
+                        <Label id="label" fx:id="lbHourlyTopTitleWind" prefHeight="20.0" prefWidth="60.0" text="풍속" />
+                        <Label id="label" fx:id="lbHourlyTopTitleClouds" prefHeight="20.0" prefWidth="60.0" text="구름" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="hboxHourlyBottom" prefHeight="250.0" prefWidth="485.0" spacing="2">
+               <children>
+                  <VBox prefHeight="250.0" prefWidth="50.0">
+                     <children>
+                        <Label id="label" fx:id="lbHourlyBottomTitleTime" prefHeight="30.0" prefWidth="50.0" text="시간" />
+                        <Label id="label" fx:id="lbHourlyBottomTitleWeather" prefHeight="80.0" prefWidth="50.0" text="날씨" />
+                        <Label id="label" fx:id="lbHourlyBottomTitleDetail" prefHeight="25.0" prefWidth="50.0" text="날씨명" />
+                        <Label id="label" fx:id="lbHourlyBottomTitleTemp" prefHeight="25.0" prefWidth="50.0" text="온도" />
+                        <Label id="label" fx:id="lbHourlyBottomTitleRainAmount" prefHeight="20.0" prefWidth="50.0" text="강수량" />
+                        <Label id="label" fx:id="lbHourlyBottomTitleHumidity" prefHeight="20.0" prefWidth="50.0" text="습도" />
+                        <Label id="label" fx:id="lbHourlyBottomTitleWind" prefHeight="20.0" prefWidth="50.0" text="풍속" />
+                        <Label id="label" fx:id="lbHourlyBottomTitleClouds" prefHeight="20.0" prefWidth="50.0" text="구름" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</fx:root>

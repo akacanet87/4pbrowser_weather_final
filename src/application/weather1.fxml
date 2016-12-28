@@ -1,0 +1,53 @@
+<!-- 초기 테스트용 xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/" type="GridPane">
+	<padding><Insets topRightBottomLeft="10.0"/></padding>
+	<children>
+		<VBox GridPane.rowIndex="0" GridPane.columnIndex="0" >
+			<children>
+				<HBox>
+					<children>
+						<ComboBox fx:id="comboSido" prefWidth="100.0" prefHeight="20.0" id="combo">
+						</ComboBox>
+						<ComboBox fx:id="comboGungu" prefWidth="100.0" prefHeight="20.0">
+						</ComboBox>
+						<ComboBox fx:id="comboDong" prefWidth="100.0" prefHeight="20.0">
+						</ComboBox>						
+					</children>
+				</HBox>
+				<HBox>
+					<children>
+					</children>
+				</HBox>
+				<HBox>
+					<children>
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+		<VBox GridPane.rowIndex="0" GridPane.columnIndex="1">
+			<children>
+				<HBox>
+					<children>
+						<HBox>
+							<children>
+							</children>
+						</HBox>					
+					</children>
+				</HBox>
+				<HBox>
+					<children>
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</children>
+</fx:root>

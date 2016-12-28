@@ -1,0 +1,30 @@
+Label{
+	-fx-background-size: cover;
+	-fx-background-repeat: no-repeat;
+	-fx-padding: 0;
+}
+
+#btn_css{
+	-fx-background-color: #0072ce;
+}
+#btn_css:hover{
+	-fx-background-color: #00d34e;
+}
+#label{
+	-fx-alignment : center;	
+}
+#pane{
+    -fx-background-image: url('//res/backtest.jpg');
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+.root{
+    -fx-background-image: url('//res/backtest.jpg');
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
