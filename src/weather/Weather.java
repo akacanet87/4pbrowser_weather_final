@@ -41,6 +41,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -84,8 +86,8 @@ public class Weather extends HBox implements Initializable{
 	String dongItem = "동/읍/리";
 	
 	String filePath = "C:/java_workspace/4pWeatherFinal/zipdb.xlsx";
-	String weatherkey = "8df055fe230d118698fd22b2ef6698e1";//"cf8ae2399ef38cef92f916134dd48bba";
-	String locKey = "AIzaSyBFAup6WBP98Q190VGT2LQrXSEM6bbkP98";
+	String weatherkey = "804de7dba2a537f192c03fa901e20a7b";//"cf8ae2399ef38cef92f916134dd48bba";
+	String locKey = "AIzaSyBgGBqjLCFOARDs_yoeOl-ewC7EPls0FmM";
 	
 	float kelvin =   -273.15f;
 
@@ -152,7 +154,28 @@ public class Weather extends HBox implements Initializable{
 		comboGungu.setPromptText(gunguItem);
 		comboDong.getItems().clear();
 		comboDong.setPromptText(dongItem);
-		getGungu(comboSido.getValue());
+		
+		if(comboSido.getValue().equals("세종")){
+			
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("죄송합니다!!");
+			alert.setHeaderText(null);
+			alert.setContentText("세종시는 구글에서 지원하지 않는 도시입니다.");
+
+			alert.showAndWait();
+			
+			comboGungu.setDisable(true);
+			comboDong.setDisable(true);
+			btnSearch.setDisable(true);
+			
+			return;
+			
+		}else{
+			
+			getGungu(comboSido.getValue());
+			
+		}
+		
 		comboGungu.setDisable(false);
 		comboDong.setDisable(true);
 		btnSearch.setDisable(true);
@@ -296,7 +319,7 @@ public class Weather extends HBox implements Initializable{
 		
 		String newUrl = URLEncoder.encode( loc, "utf-8");
 
-		String locationurl = "http://maps.googleapis.com/maps/api/geocode/json?address="+newUrl+"key="+locKey+"&language=ko";
+		String locationurl = "https://maps.googleapis.com/maps/api/geocode/json?address="+newUrl+"&key="+locKey+"&language=ko";
 		// String locationurl =
 		// "https://apis.daum.net/local/geo/addr2coord?apikey=daa88b83639c1c74cd56e2f83b3d8e3d&q="+loc+"&output=json";
 		//String newUrl = URLDecoder.decode( URLDecoder.decode(locationurl, "8859_1"), "utf-8");
@@ -379,7 +402,7 @@ public class Weather extends HBox implements Initializable{
 		System.out.println("\nSending 'GET' request to URL : " + weatherurl);
 		System.out.println("Response Code : " + responseCode);
 
-		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream(), "utf-8"));
 		String inputLine;
 		StringBuffer response = new StringBuffer();
 
@@ -474,7 +497,7 @@ public class Weather extends HBox implements Initializable{
 		
 		//lbPresentWeatherIcon.setText(strWeatherIcon);
 	
-		root.setStyle("-fx-background-image: url('//res/background/night.jpg');");
+		root.setStyle("-fx-background-image: url('//res/weather/"+strWeatherIcon+".jpg');");
 		root.setStyle("-fx-padding: 0;");
 		root.setStyle("-fx-background-size: 950 550;");
 		root.setStyle("fx-background-position: center center;");
@@ -505,7 +528,6 @@ public class Weather extends HBox implements Initializable{
 		
 	}
 	
-
 	public void getDailyWeather(double lat, double lon) throws Exception {
 
 		String weatherurl = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + lat + "&lon=" + lon

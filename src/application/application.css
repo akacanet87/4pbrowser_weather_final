@@ -14,7 +14,7 @@ Label{
 	-fx-alignment : center;	
 }
 #pane{
-    -fx-background-image: url('//res/backtest.jpg');
+    -fx-background-image: url('//res/weather/backtest.jpg');
     -fx-background-repeat: stretch;   
     -fx-background-size: 900 506;
     -fx-background-position: center center;
@@ -22,7 +22,7 @@ Label{
 }
 
 .root{
-    -fx-background-image: url('//res/backtest.jpg');
+    -fx-background-image: url('//res/weather/backtest.jpg');
     -fx-background-repeat: stretch;   
     -fx-background-size: 900 506;
     -fx-background-position: center center;
