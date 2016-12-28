@@ -120,7 +120,15 @@ public class Weather extends HBox implements Initializable{
 		gungu = comboGungu.getValue();
 		dong = comboDong.getValue();
 		
-		location = sido+" "+gungu+" "+dong;
+		if(sido.equals("¼¼Á¾")){
+		
+			location = gungu+" "+dong;
+			
+		}else{
+			
+			location = sido+" "+gungu+" "+dong;
+			
+		}
 		
 		try {
 			
